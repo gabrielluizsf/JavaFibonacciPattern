@@ -9,25 +9,30 @@ public class FibonacciPattern {
 
     public static void drawFibonacciPattern(int n) {
         int[] fibonacci = generateFibonacciSequence(n);
-
+    
+        StringBuilder pattern = new StringBuilder();
         for (int i = 0; i < n; i++) {
             int num = fibonacci[i];
             for (int j = 0; j < num; j++) {
-                System.out.print("*");
+                pattern.append("*");
             }
-            System.out.println();
+            pattern.append("\n");
         }
+    
+        System.out.print(pattern);
     }
+    
+
 
     public static int[] generateFibonacciSequence(int n) {
         int[] fibonacci = new int[n];
         fibonacci[0] = 0;
         fibonacci[1] = 1;
-
+    
         for (int i = 2; i < n; i++) {
             fibonacci[i] = fibonacci[i - 1] + fibonacci[i - 2];
         }
-
+    
         return fibonacci;
     }
-}
+}    
